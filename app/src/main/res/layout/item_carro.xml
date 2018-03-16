@@ -23,5 +23,4 @@
         android:id="@+id/tvMarca"
         tools:text="Marca"/>
 
-
 </LinearLayout>

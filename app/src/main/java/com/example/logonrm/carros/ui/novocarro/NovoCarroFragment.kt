@@ -1,6 +1,5 @@
 package com.example.logonrm.carros.ui.novocarro
 
-
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -15,9 +14,6 @@ import com.example.logonrm.carros.model.Carro
 import kotlinx.android.synthetic.main.fragment_novo_carro.*
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
-
-
 
 /**
  * A simple [Fragment] subclass.
