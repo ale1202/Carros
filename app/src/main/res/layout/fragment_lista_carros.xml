@@ -11,6 +11,8 @@
 
         <include layout="@layout/loading"/>
 
+        <include layout="@layout/erro"/>
+
 </FrameLayout>
 
 

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.logonrm.carros.R
 import com.example.logonrm.carros.model.Carro
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_carro.view.*
 
 class ListaCarrosAdapter(private val carros: List<Carro>,
@@ -15,6 +16,7 @@ class ListaCarrosAdapter(private val carros: List<Carro>,
     : RecyclerView.Adapter<ListaCarrosAdapter.MeuViewHolder>(){
 
     override fun onBindViewHolder(holder: MeuViewHolder?, position: Int) {
+
         val carro = carros[position]
         holder?.let {
             it.bindView(carro)
@@ -22,6 +24,7 @@ class ListaCarrosAdapter(private val carros: List<Carro>,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MeuViewHolder {
+
         val view = LayoutInflater.from(context)
                 .inflate(R.layout.item_carro, parent, false)
         return MeuViewHolder(view)
@@ -32,9 +35,15 @@ class ListaCarrosAdapter(private val carros: List<Carro>,
     }
 
     class MeuViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         fun bindView(carro: Carro){
             itemView.tvMarca.text = carro.marca
             itemView.tvModelo.text = carro.modelo
+
+            Picasso.get()
+                    .load(carro.urlImage)
+                    .placeholder(R.drawable.car01)
+                    .into(itemView.ivFoto);
 
         }
     }
