@@ -1,6 +1,7 @@
 package com.example.logonrm.carros.ui.listacarros
 
 import android.content.Context
+import android.support.v4.content.ContextCompat
 import android.support.v7.view.menu.ActionMenuItemView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -39,12 +40,17 @@ class ListaCarrosAdapter(private val carros: List<Carro>,
         fun bindView(carro: Carro){
             itemView.tvMarca.text = carro.marca
             itemView.tvModelo.text = carro.modelo
+            if ( carro.urlImage.isNullOrEmpty()){
+                itemView.ivFoto.setImageDrawable(ContextCompat.getDrawable(itemView.context,R.drawable.procurando)
+                )
+            } else {
 
-            Picasso.get()
-                    .load(carro.urlImage)
-                    .placeholder(R.drawable.car01)
-                    .into(itemView.ivFoto);
-
+                Picasso.get()
+                        .load(carro.urlImage)
+                        .placeholder(R.drawable.procurando)
+                        .error(R.drawable.errou)
+                        .into(itemView.ivFoto)
+            }
         }
     }
 }

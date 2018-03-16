@@ -36,7 +36,7 @@ class ListaCarrosFragment : Fragment() {
     }
 
     fun carregarDados() {
-        val api = RetrofitClient.getInstance("https://carroapiscjalexandre.herokuapp.com")
+        val api = RetrofitClient.getInstance()
                 .create(CarroAPI::class.java)
 
         loading.visibility = View.VISIBLE
