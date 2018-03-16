@@ -70,7 +70,6 @@
                         android:layout_height="wrap_content" />
 
                 </android.support.design.widget.TextInputLayout>
-
             </LinearLayout>
 
         </ScrollView>
